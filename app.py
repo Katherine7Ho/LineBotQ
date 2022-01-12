@@ -180,7 +180,7 @@ def getNameEmojiMessage():
         emojis_list.append(
             {
                 "index":i,
-                "productId": "5ac1bfd5040ab15980c9b435",
+                "productId": "5ac21a8c040ab15980c9b43f",
                 "emojiId": f"{lookUpStr.index(nChar)+1:03}"
             }
         )
