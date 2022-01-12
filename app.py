@@ -33,6 +33,7 @@ def index():
     if request.method == 'GET':
         return 'ok'
     body = request.json
+    print(body.keys)
     events = body["events"]
     print(body)
     if "replyToken" in events[0]:
