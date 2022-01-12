@@ -260,30 +260,18 @@ def getImageMessage(originalContentUrl):
     message = dict()
 
     return message
-
-
-# def replyMessage(payload):
-#     response = {}
-#     print(response.text)
-#     return 'OK'
+    
 
 def replyMessage(payload):
     response = requests.post('https://api.line.me/v2/bot/message/reply', headers = HEADER, data=json.dumps(payload))
-    # print(v)
     # print(response.text)
     return response.text
-    
-
-# def pushMessage(payload):
-#     response = {}
-#     print(response.text)
-#     return 'OK'
 
 
 def pushMessage(payload):
-    response = requests.post('https://classonela.herokuapp.com/', headers = HEADER)
-    print(response.text)
-    return 'OK'
+    response = requests.post('https://api.line.me/v2/bot/message/reply', headers = HEADER)
+    # print(response.text)
+    return response.text
 
 
 def getTotalSentMessageCount():
