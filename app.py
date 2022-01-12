@@ -33,7 +33,6 @@ def index():
     if request.method == 'GET':
         return 'ok'
     body = request.json
-    print(body.keys)
     events = body["events"]
     print(body)
     if "replyToken" in events[0]:
@@ -269,7 +268,7 @@ def getImageMessage(originalContentUrl):
 #     return 'OK'
 
 def replyMessage(payload):
-    response = requests.post('https://classonela.herokuapp.com/', headers = HEADER, data=json.dumps(payload))
+    response = requests.post('https://api.line.me/v2/bot/message/reply', headers = HEADER, data=json.dumps(payload))
     # print(v)
     # print(response.text)
     return response.text
