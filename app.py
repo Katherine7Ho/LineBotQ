@@ -269,9 +269,9 @@ def getImageMessage(originalContentUrl):
 
 def replyMessage(payload):
     response = requests.post('https://classonela.herokuapp.com/', headers = HEADER)
-    print(response)
+    # print(v)
     # print(response.text)
-    return 'OK'
+    return response.text
     
 
 # def pushMessage(payload):
