@@ -179,6 +179,14 @@ def getNameEmojiMessage():
     for i, nChar in enumerate(name):
         emojis_list.append(
             {
+                "type": "text",
+                "text": i,
+                "emojis": [
+                    {
+                        "productId": "5ac1bfd5040ab15980c9b435",
+                        "emojiId": "00"+ nChar
+                    }
+                ]
 
             }
         )
