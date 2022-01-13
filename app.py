@@ -262,7 +262,7 @@ def getImageMessage(originalContentUrl):
     message = dict()
     message["type"] = "image"
     message["originalContentUrl"] = originalContentUrl
-#     message["previewImageUrl"] = "https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.boehringer-ingelheim.tw%2Fsites%2Ftw%2Ffiles%2Fimages%2Ftw_file%2F3_0.jpg&imgrefurl=https%3A%2F%2Fwww.boehringer-ingelheim.tw%2Fnode%2F116749&tbnid=y22D3njnjuK_tM&vet=12ahUKEwjO8YCPiK71AhUJdJQKHX_BBF0QMygAegUIARDTAQ..i&docid=aL40J8it55lyrM&w=1000&h=667&itg=1&q=%E8%B2%93%E5%92%AA&ved=2ahUKEwjO8YCPiK71AhUJdJQKHX_BBF0QMygAegUIARDTAQ"
+    message["previewImageUrl"] = originalContentUrl
     return message
 
 
