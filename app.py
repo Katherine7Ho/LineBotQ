@@ -49,7 +49,7 @@ def index():
                     payload["messages"] = [getPlayStickerMessage()]
                 elif text == "台北101":
                     payload["messages"] = [getTaipei101ImageMessage(),
-                                        #    getMRTSoundMessage(),
+                                           getMRTSoundMessage(),
                                            getTaipei101LocationMessage(),
                                            getMRTVideoMessage()
                                         ]
@@ -239,7 +239,6 @@ def getTaipei101LocationMessage():
     message["address"] = "Section 1, Jianguo S Rd, Da’an District, Taipei City, 106"
     message["latitude"] = 25.035647504164412 
     message["longitude"] = 121.53776389479987
-    print(os.getcwd())
 
     return message
 
@@ -259,7 +258,7 @@ def getMRTSoundMessage():
     message["type"] = "audio"
     message["originalContentUrl"] = F"{end_point}/static/mrt_sound.m4a"
     import audioread
-    with audioread.audio_open("/static/mrt_sound.m4a") as f:
+    with audioread.audio_open(message["originalContentUrl"]) as f:
         # totalsec contains the length in float
         totalsec = f.duration
     message["duration"] = totalsec * 1000
