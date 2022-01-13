@@ -49,6 +49,7 @@ def index():
                     payload["messages"] = [getPlayStickerMessage()]
                 elif text == "台北101":
                     payload["messages"] = [getTaipei101ImageMessage(),
+                                           getMRTSoundMessage(),
                                         #    getTaipei101LocationMessage(),
                                            getMRTVideoMessage()
                                         ]
@@ -255,7 +256,8 @@ def getMRTSoundMessage():
     with audioread.audio_open('static/mrt_sound.m4a') as f:
         # totalsec contains the length in float
         totalsec = f.duration
-    message["duration"] = totalsec * 1000
+    # message["duration"] = totalsec * 1000
+    message["duration"] = 1000
     return message
 
 
