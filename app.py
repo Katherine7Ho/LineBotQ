@@ -49,7 +49,7 @@ def index():
                     payload["messages"] = [getPlayStickerMessage()]
                 elif text == "台北101":
                     payload["messages"] = [getTaipei101ImageMessage(),
-                                        #    getMRTSoundMessage(),
+                                           getMRTSoundMessage(),
                                            getTaipei101LocationMessage(),
                                            getMRTVideoMessage()
                                         ]
@@ -263,6 +263,7 @@ def getMRTSoundMessage():
         totalsec = f.duration
     message["duration"] = totalsec * 1000
     # message["duration"] = 1000
+    print(os.getcwd())
     return message
 
 
