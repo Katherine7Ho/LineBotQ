@@ -96,7 +96,7 @@ def index():
                               }
                             }
                         ]
-                elif text == "Confirm template":
+                elif text == "確認":
                     payload["messages"] = [
                             {
                                 "type": "template",
@@ -119,7 +119,7 @@ def index():
                                 }
                                 }
                     ]
-                elif text == "Carousel template":
+                elif text == "旋轉":
                     payload["messages"] = [
                             {
                                 "type": "template",
