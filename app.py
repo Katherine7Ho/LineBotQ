@@ -50,7 +50,7 @@ def index():
                 elif text == "台北101":
                     payload["messages"] = [getTaipei101ImageMessage(),
                                            getMRTSoundMessage(),
-                                        #    getTaipei101LocationMessage(),
+                                           getTaipei101LocationMessage(),
                                            getMRTVideoMessage()
                                         ]
                 elif text == "扣打":
@@ -234,6 +234,11 @@ def getPlayStickerMessage():
 
 def getTaipei101LocationMessage():
     message = dict()
+    message["type"] = "location"
+    message["title"] = "my location"
+    message["address"] = "Section 1, Jianguo S Rd, Da’an District, Taipei City, 106"
+    message["latitude"] = 25.035647504164412 
+    message["longitude"] = 121.53776389479987
 
     return message
 
@@ -253,7 +258,7 @@ def getMRTSoundMessage():
     message["type"] = "audio"
     message["originalContentUrl"] = F"{end_point}/static/mrt_sound.m4a"
     import audioread
-    with audioread.audio_open('static/mrt_sound.m4a') as f:
+    with audioread.audio_open('https://classonela.herokuapp.com/static/mrt_sound.m4a') as f:
         # totalsec contains the length in float
         totalsec = f.duration
     message["duration"] = totalsec * 1000
